@@ -1,31 +1,31 @@
 /* blockquotes */
 
 blockquote {
-  border-color: var(--link-color);
-  border-style: solid;
-  border-width: 0 0 0 3px;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   padding: 0 1rem;
+  border-width: 0 0 0 3px;
+  border-style: solid;
+  border-color: var(--link-color);
 }
 
 blockquote > p {
   display: inline-block;
-  font-style: italic;
   margin: 0;
   padding: 0;
+  font-style: italic;
 }
 
-blockquote > p:after,
-blockquote > p:before {
+blockquote > p::after,
+blockquote > p::before {
   color: var(--link-color);
   font-weight: bold;
 }
 
-blockquote > p:after {
+blockquote > p::after {
   content: ' "';
 }
 
-blockquote > p:before {
+blockquote > p::before {
   content: '" ';
 }
 
@@ -33,11 +33,11 @@ blockquote > p:before {
 
 code,
 pre {
-  background-color: var(--background-color-alt);
   border-color: var(--background-color-alt);
   border-radius: 5px;
-  font-family: var(--font-family-monospace);
+  background-color: var(--background-color-alt);
   font-size: 95%;
+  font-family: var(--font-family-monospace);
   transition: background-color var(--transition-duration),
               border-color var(--transition-duration),
               border-radius 0s ease-out var(--transition-duration);
@@ -51,19 +51,19 @@ a:focus code,
 a:hover code,
 code a:focus,
 code a:hover {
+  border-width: 0 0 1px;
+  border-style: solid;
   border-color: var(--link-color);
   border-radius: 5px 5px 0 0;
-  border-style: solid;
-  border-width: 0 0 1px 0;
   transition: background-color var(--transition-duration),
               border-color var(--transition-duration),
               border-radius 0s;
 }
 
 pre {
-  line-height: 1.5rem;
   overflow: auto;
   padding: 0.3rem 0.6rem;
+  line-height: 1.5rem;
   scrollbar-width: none;  /* firefox */
 }
 
@@ -82,12 +82,12 @@ pre > code {
 /* details */
 
 details {
-  border-color: var(--background-color-alt);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 5px;
+  margin: 0 0 1rem;
   padding: 0.3rem 0.6rem;
-  margin: 0 0 1rem 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--background-color-alt);
+  border-radius: 5px;
 }
 
 details[open] > summary::before {
@@ -95,19 +95,19 @@ details[open] > summary::before {
 }
 
 summary {
-  cursor: pointer;
-  font-weight: bold;
   list-style-type: "";
+  font-weight: bold;
+  cursor: pointer;
 }
 
 summary::before {
   content: "\f054";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
   margin: 0 0.5rem 0 0;
+  font-weight: 900;
+  font-family: "Font Awesome 6 Free";
 }
 
-summary:hover:before,
+summary:hover::before,
 details[open] > summary::before {
   color: var(--link-color);
 }
@@ -129,26 +129,26 @@ body {
 }
 
 span.katex-display {
-  align-items: center;
   display: flex;
+  align-items: center;
 }
 
 span.katex-display::after {
-  color: var(--font-color);
   content: "[" counter(eqn) "]";
-  counter-increment: eqn;
   padding: 0 0 0 2rem;
+  color: var(--font-color);
+  counter-increment: eqn;
 }
 
-span.katex-display:hover:after {
+span.katex-display:hover::after {
   color: var(--link-color);
 }
 
 /* footnotes */
 
 sup {
-  line-height: 0;
   vertical-align: super;
+  line-height: 0;
 }
 
 .footnote {
@@ -157,15 +157,15 @@ sup {
 }
 
 .footnote hr {
-  border-color: var(--background-color-alt);
-  border-style: solid;
-  border-width: 1px 0 0 0;
-  margin: 0;
   width: 50%;
+  margin: 0;
+  border-width: 1px 0 0;
+  border-style: solid;
+  border-color: var(--background-color-alt);
 }
 
 .footnote li:first-child {
-  margin: 1.5rem 0 0 0;
+  margin: 1.5rem 0 0;
 }
 
 .footnote-backref {
@@ -174,30 +174,30 @@ sup {
 
 .footnote-backref::after {
   content: "\f08e";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
   margin: 0 0 0 1rem;
+  font-weight: 900;
+  font-family: "Font Awesome 6 Free";
 }
 
 /* horizontal rule */
 
 hr {
-  border-color: var(--background-color-alt);
+  border-width: 0 0 1px;
   border-style: solid;
-  border-width: 0 0 1px 0;
+  border-color: var(--background-color-alt);
 }
 
 /* keys */
 
 kbd {
-  background-color: var(--background-color-alt);
-  border-color: var(--font-color);
-  border-radius: 5px;
-  border-style: solid;
-  border-width: 1px;
-  cursor: default;
   margin: 0 0.3rem;
   padding: 0.3rem 0.6rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--font-color);
+  border-radius: 5px;
+  background-color: var(--background-color-alt);
+  cursor: default;
 }
 
 kbd:hover {
@@ -208,9 +208,9 @@ kbd:hover {
 /* links */
 
 a {
-  border-color: transparent;
+  border-width: 0 0 1px;
   border-style: solid;
-  border-width: 0 0 1px 0;
+  border-color: transparent;
   color: var(--link-color);
   cursor: pointer;
   text-decoration-line: none;
@@ -225,8 +225,8 @@ a:hover {
 
 div.mermaid svg {
   display: block;
-  margin: 0 auto;
   overflow: auto;
+  margin: 0 auto;
 }
 
 /* strikethrough */
@@ -238,9 +238,9 @@ del {
 
 a del,
 del a {
-  border-color: transparent;
+  border-width: 0 0 1px;
   border-style: solid;
-  border-width: 0 0 1px 0;
+  border-color: transparent;
   text-decoration-line: line-through;
   text-decoration-color: var(--link-color);
 }
@@ -255,8 +255,8 @@ del a:hover {
 /* tables */
 
 table {
-  border-collapse: collapse;
   margin: 0 auto;
+  border-collapse: collapse;
 }
 
 table thead tr th,
@@ -266,9 +266,9 @@ table tbody tr td {
 
 table thead tr th,
 table tbody tr:last-child td {
-  border-color: var(--font-color);
+  border-width: 0 0 1px;
   border-style: solid;
-  border-width: 0 0 1px 0;
+  border-color: var(--font-color);
 }
 
 table tbody tr:nth-child(odd) {
@@ -278,17 +278,17 @@ table tbody tr:nth-child(odd) {
 /* table of contents */
 
 .toc ul {
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .toc ul li {
-  border-color: transparent;
-  border-style: solid;
-  border-width: 0 0 0 1px;
-  color: var(--font-color);
   padding: 0 0 0 1rem;
+  border-width: 0 0 0 1px;
+  border-style: solid;
+  border-color: transparent;
+  color: var(--font-color);
 }
 
 .toc ul li:hover {
@@ -297,9 +297,9 @@ table tbody tr:nth-child(odd) {
 }
 
 .toc ul li a {
+  display: block;
   border: 0;
   color: inherit;
-  display: block;
 }
 
 .toc ul li a:hover {
@@ -324,20 +324,20 @@ h2 + h3,
 h3 + h4,
 h4 + h5,
 h5 + h6 {
-  padding: 1rem 0 0 0;
+  padding: 1rem 0 0;
 }
 
 h1 {
-  border-color: var(--background-color-alt);
+  padding: 4rem 0 1rem;
+  border-width: 0 0 1px;
   border-style: solid;
-  border-width: 0 0 1px 0;
+  border-color: var(--background-color-alt);
   font-size: 200%;
-  padding: 4rem 0 1rem 0;
 }
 
 h2 {
+  padding: 2rem 0 0;
   font-size: 150%;
-  padding: 2rem 0 0 0;
 }
 
 h3 {
@@ -354,6 +354,6 @@ h6 {
 }
 
 h6 {
-  font-style: italic;
   font-weight: normal;
+  font-style: italic;
 }

@@ -15,15 +15,15 @@ fonts:
 * `background-color`: default background colour,
 * `background-color-alt`: alternative background colour,
 * `font-color`: default text colour,
+* `link-color`: default clickable link color,
 * `font-family`: default font for all text,
 * `font-family-monospace`: monospace font (for code snippet),
 * `font-size`: common font size used by most browsers,
+* `line-height`: height of a line of text,
 * `icon-size`: size of the icons,
-* `link-color`: default clickable link color,
-* `max-width`: max width of the text container,
+* `article-width`: max width of the text container,
 * `side-nav-width`: width of the side navigation bar,
 * `top-nav-height`: height of the top navigation bar,
-* `line-height`: height of a line of text,
 * `transition-duration`: duration for CSS transitions.
 
 _These variables are defined in the [`style.css`](/style.css) file._
@@ -42,8 +42,9 @@ _These variables are defined in the [`style.css`](/style.css) file._
 | Variable name | Value |
 |:---|:---|
 | `font-size` | `16px` (equals to `1rem`) |
-| `icon-size` | `20px` | 
-| `max-width` | `1000px` |
+| `line-height` | `2rem` (dependent on the font size) |
+| `icon-size` | `1.25rem` (dependent on the font size) | 
+| `article-width` | `1000px` |
 | `side-nav-width` | `40%` |
 | `top-nav-height` | `5rem` (dependent on the font size) |
 
@@ -57,11 +58,10 @@ _These variables are defined in the [`style.css`](/style.css) file._
 The default font families are chosen from the list of
 [web safe fonts](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#web_safe_fonts).
 
-## Others
+## Miscellaneous
 
 | Variable name | Value |
 |:---|:---|
-| `line-height` | `2rem` (dependent on the font size) |
 | `transition-duration` | `0.5s` |
 
 Note the duration parameter is currently applied on the following
@@ -82,7 +82,10 @@ The content of the document `body` is defined as follows:
 </body>
 ```
 
-See below for a detailed description of the styles applied on the children entities.
+See below for a detailed description of the styles applied on the children sections.
+
+_The styling code associated with the sections described below is defined in the
+[`struct.css`](/_struct.css) file._
 
 ## Scrolling progress indicator
 
@@ -90,27 +93,21 @@ See below for a detailed description of the styles applied on the children entit
 <nav id="scroller"></nav>
 ```
 
-_The styling code associated with this section is defined in the
-[`style-navigation.css`](/style-navigation.css) file._
-
 ## Top navigation bar
 
 ```html
 <nav id="topbar">
-  <div class="buttons">
-    <a class="button toc"></a>
-    <a class="button search"></a>
+  <div>
+    <a class="toc"></a>
+    <a class="search"></a>
     <span class="spacer"></span>
     <a class="logo"><img></a>
     <span class="spacer"></span>
-    <a class="button repo"></a>
-    <a class="button theme"></a>
+    <a class="repo"></a>
+    <a class="theme"></a>
   </div>
 </nav>
 ```
-
-_The styling code associated with this section is defined in the
-[`style-navigation.css`](/style-navigation.css) file._
 
 ## Splash screen
 
@@ -144,53 +141,41 @@ See below for a detailed description of the styles applied on the children entit
 <aside id="toc"></aside>
 ```
 
-_The styling code associated with this section is defined in the
-[`style-navigation.css`](/style-navigation.css) file._
-
 #### Search
 
 ```html
 <aside id="search">
-  <div class="input-with-buttons">
-    <span class="button search"></span>
+  <div>
+    <span class="search"></span>
     <input id="search-input">
-    <span class="button reset"></span>
+    <span class="reset"></span>
   </div>
   <ul id="search-output"></ul>
 </aside>
 ```
 
-_The styling code associated with this section is defined in the
-[`style-search.css`](/style-search.css) file._
-
-### Text content
+### Main content
 
 ```html
 <article>
   <div class="main-text"></div>
   <span class="spacer"></span>
-  <div class="prev-next">
+  <footer>
     <a id="prev"></a>
     <span class="spacer"></span>
     <a id="next"></a>
-  </div>
+  </footer>
 </article>
 ```
 
-#### Main text
-
-_The styling code associated with this section is defined in the
-[`style.css`](/style.css) file._
+#### Article content
 
 #### Preceding and following articles
 
-_The styling code associated with this section is defined in the
-[`style.css`](/style.css) file._
-
 # HTML entities
 
-_The styling code associated with HTML entities (native and/or custom) is defined in the
-[`style-entities.css`](/style-entities.css) file._
+_The styling code associated with HTML constructs (native and/or custom) is defined in
+the [`markup.css`](/_markup.css) file._
 
 # CSS imports
 
@@ -207,10 +192,11 @@ Syntax highlighting is rendered client-side (via
 [`highlight.js`](https://highlightjs.org/)) and requires a specific set of (18!) colours
 to be defined. The [`github-colours.sh`](/github-colours.sh) script fetches and
 aggregates said colours from official themes (search for the `github` keyword in the
-[`src/styles/` directory of the `highlight.js` repo](https://github.com/highlightjs/highlight.js/tree/main/src/styles)).
+[`srcstyles/` directory of the `highlight.js` repo](https://github.com/highlightjs/highlight.js/tree/main/srcstyles)).
 
-_Colours and style mappings associated with syntax highlighting are defined in the
-[`style-highlight.css`](/style-highlight.css) file._
+_External imports are defined in the [`style.css`](/style.css) file, while colours and
+style mappings associated with syntax highlighting are defined in the
+[`syntax.css`](/_syntax.css) file._
 
 # `@media` rules
 
@@ -220,18 +206,4 @@ larger displays) and the _preceding/following articles_ links (on top of each ot
 taking the whole width of the screen by default, but side-by-side and with a fixed
 dimension for larger display).
 
-_`@media` rules are defined in the [`style.css`](/style.css) file._
-
-# Post-processing
-
-Recommendations for post-processing include
-[`Autoprefixer`](https://github.com/postcss/autoprefixer),
-[`Stylelint`](https://github.com/stylelint/stylelint) and
-[`cssnano`](https://github.com/cssnano/cssnano) (via their respective plugins for
-[`PostCSS`](https://github.com/postcss/postcss)):
-
-```shell
-$ postcss style.css --replace --use autoprefixer  # add vendor prefixes
-$ postcss style.css --replace --use stylelint  # lint and catch errors
-$ postcss style.css --replace --use cssnano  # minify
-```
+_`@media` rules are defined in the [`struct.css`](/_struct.css) file._
