@@ -85,7 +85,7 @@ The content of the document `body` is defined as follows:
 See below for a detailed description of the styles applied on the children sections.
 
 _The styling code associated with the sections described below is defined in the
-[`struct.css`](/_struct.css) file._
+[`_struct.css`](/_struct.css) file._
 
 ## Scrolling progress indicator
 
@@ -145,11 +145,11 @@ See below for a detailed description of the styles applied on the children entit
 
 ```html
 <aside id="search">
-  <div>
+  <header>
     <span class="search"></span>
     <input id="search-input">
     <span class="reset"></span>
-  </div>
+  </header>
   <ul id="search-output"></ul>
 </aside>
 ```
@@ -158,7 +158,7 @@ See below for a detailed description of the styles applied on the children entit
 
 ```html
 <article>
-  <div class="main-text"></div>
+  <div></div>
   <span class="spacer"></span>
   <footer>
     <a id="prev"></a>
@@ -172,10 +172,10 @@ See below for a detailed description of the styles applied on the children entit
 
 #### Preceding and following articles
 
-# HTML entities
+# Markup
 
 _The styling code associated with HTML constructs (native and/or custom) is defined in
-the [`markup.css`](/_markup.css) file._
+the [`_markup.css`](/_markup.css) file._
 
 # CSS imports
 
@@ -196,7 +196,7 @@ aggregates said colours from official themes (search for the `github` keyword in
 
 _External imports are defined in the [`style.css`](/style.css) file, while colours and
 style mappings associated with syntax highlighting are defined in the
-[`syntax.css`](/_syntax.css) file._
+[`_syntax.css`](/_syntax.css) file._
 
 # `@media` rules
 
@@ -206,4 +206,4 @@ larger displays) and the _preceding/following articles_ links (on top of each ot
 taking the whole width of the screen by default, but side-by-side and with a fixed
 dimension for larger display).
 
-_`@media` rules are defined in the [`struct.css`](/_struct.css) file._
+_`@media` rules are defined in the [`_struct.css`](/_struct.css) file._

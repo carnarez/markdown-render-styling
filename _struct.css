@@ -189,7 +189,11 @@ aside {
   flex-direction: column;
   overflow: hidden;
   height: 100%;
+  width: var(--side-nav-width);
   padding: var(--top-nav-height) 0 0 0;
+  border-width: 0 1px 0 0;
+  border-style: solid;
+  border-color: var(--background-color-alt);
   font-size: 90%;
   scrollbar-width: none;
 }
@@ -203,14 +207,6 @@ aside.visible-sidebar {
   overflow: auto;
 }
 
-aside#search,
-aside#toc {
-  width: var(--side-nav-width);
-  border-width: 0 1px 0 0;
-  border-style: solid;
-  border-color: var(--background-color-alt);
-}
-
 aside > * {
   width: 100%;
   margin: 0;
@@ -222,17 +218,17 @@ aside a.active {
   font-weight: bold;
 }
 
-nav#search div:first-child {
+aside#search header {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-nav#search div:first-child span:hover {
+aside#search header span:hover {
   background-color: inherit;
 }
 
-nav#search #search-input {
+aside#search #search-input {
   flex-grow: 2;
   max-width: 400px;
   padding: 0;
@@ -244,20 +240,20 @@ nav#search #search-input {
   outline: none;
   font-size: var(--font-size);
   font-family: var(--font-family);
-  line-height: 2rem;
+  line-height: var(--line-height);
 }
 
-nav#search #search-input::placeholder {
+aside#search #search-input::placeholder {
   color: var(--font-color);
   opacity: 0.25;
 }
 
-nav#search #search-output {
+aside#search #search-output {
   padding: 0 1rem;
   list-style: none;
 }
 
-nav#search #search-output li {
+aside#search #search-output li {
   margin: 1rem 0;
   padding: 0 1rem;
   border-width: 0 0 0 1px;
@@ -266,25 +262,25 @@ nav#search #search-output li {
   color: var(--font-color);
 }
 
-nav#search #search-output li:first-child {
+aside#search #search-output li:first-child {
   margin: 1rem 0;
 }
 
-nav#search #search-output li:hover {
+aside#search #search-output li:hover {
   border-color: var(--link-color);
 }
 
-nav#search #search-output li a {
+aside#search #search-output li a {
   width: 100%;
   border: 0;
 }
 
-nav#search #search-output .text {
+aside#search #search-output .text {
   margin: 0 0 0 1rem;
   color: var(--font-color);
 }
 
-nav#search #search-output .text::after {
+aside#search #search-output .text::after {
   content: "\f08e";
   color: var(--link-color);
   font-weight: 900;
@@ -292,17 +288,17 @@ nav#search #search-output .text::after {
   font-family: "Font Awesome 6 Free", serif;
 }
 
-nav#search #search-output .score {
+aside#search #search-output .score {
   margin: 0 1rem;
   font-size: 80%;
   opacity: 0.4;
 }
 
-nav#search #search-output li:hover .score {
+aside#search #search-output li:hover .score {
   opacity: 0.6;
 }
 
-nav#search mark {
+aside#search mark {
   color: var(--link-color);
   font-weight: bold;
 }
