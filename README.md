@@ -3,7 +3,7 @@
 included in and rendered by the code from the
 [`markdown-render`](https://github.com/carnarez/markdown-render) repo. The crude
 light/dimmed/dark themes and syntax highlighting were [quite shamelessly] forked from
-GitHub colour scheme for consistency.
+GitHub colour scheme for my own sense of consistency.
 
 Structure of this little codebase:
 
@@ -28,7 +28,7 @@ fonts:
 * `font-color`: default text colour,
 * `link-color`: default clickable link color,
 * `font-family`: default font for all text,
-* `font-family-monospace`: monospace font (for code snippet),
+* `font-family-monospace`: monospace font (for code snippets),
 * `font-size`: common font size used by most browsers,
 * `line-height`: height of a line of text,
 * `icon-size`: size of the icons,
@@ -82,7 +82,65 @@ Note the duration parameter is currently applied on the following
 
 # Document sections
 
-The content of the document `body` is defined as follows:
+<details>
+<summary>Full HTML code</summary>
+
+Below the full [pseudo-]code of the `body` tag of the HTML template.
+
+```html
+<body>
+
+  <nav id="scroller"></nav>
+
+  <nav id="topbar">
+    <div>
+      <a class="sidebar"></a>
+      <a class="search"></a>
+      <span class="spacer"></span>
+      <a class="logo"><img></a>
+      <span class="spacer"></span>
+      <a class="repo"></a>
+      <a class="theme"></a>
+    </div>
+  </nav>
+
+  <header>
+    <img src="splash">
+    <span class="title"></span>
+    <span class="description"></span>
+  </header>
+
+  <main>
+
+    <aside id="toc">toc</aside>
+
+    <aside id="search">
+      <header>
+        <span class="search"></span>
+        <input id="search-input">
+        <span class="reset"></span>
+      </header>
+      <ul id="search-output"></ul>
+    </aside>
+
+    <article>
+      <div></div>
+      <span class="spacer"></span>
+      <footer>
+        <a id="prev"></a>
+        <span class="spacer"></span>
+        <a id="next"></a>
+      </footer>
+    </article>
+
+  </main>
+
+</body>
+```
+
+</details>
+
+The high-level content of the document `body` is defined as follows:
 
 ```html
 <body>
@@ -132,7 +190,7 @@ _The styling code associated with the sections described below is defined in the
 
 ## Page content
 
-The content of the `main` section is defined as follows:
+The high-level content of the `main` section is defined as follows:
 
 ```html
 <main>
