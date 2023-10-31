@@ -7,10 +7,14 @@ GitHub colour scheme for consistency.
 
 Structure of this little codebase:
 
-* `style-markup.css` defines styles for native and custom HTML tags;
-* `style-struct.css` defines styles for the generated pages sections;
-* `style-syntax.css` defines styles for syntax highlighting for code snippets;
-* `style.css` defines the variables and imports the content above.
+* [`style-markup.css`](/style-markup.css) defines styles for native and custom HTML
+  tags;
+* [`style-struct.css`](/style-struct.css) defines styles for the generated pages
+  sections;
+* [`style-syntax.css`](/style-syntax.css) defines styles for syntax highlighting for
+  code snippets;
+* [`style.css`](/style.css) defines configuration variables and imports the content 
+  above to be bundled.
 
 See below for a more detailed description of the defined CSS.
 
