@@ -5,7 +5,14 @@ included in and rendered by the code from the
 light/dimmed/dark themes and syntax highlighting were [quite shamelessly] forked from
 GitHub colour scheme for consistency.
 
-See below for a detailed description of the defined CSS.
+Structure of this little codebase:
+
+* `style-markup.css` defines styles for native and custom HTML tags;
+* `style-struct.css` defines styles for the generated pages sections;
+* `style-syntax.css` defines styles for syntax highlighting for code snippets;
+* `style.css` defines the variables and imports the content above.
+
+See below for a more detailed description of the defined CSS.
 
 # Configuration
 
@@ -85,7 +92,7 @@ The content of the document `body` is defined as follows:
 See below for a detailed description of the styles applied on the children sections.
 
 _The styling code associated with the sections described below is defined in the
-[`_struct.css`](/_struct.css) file._
+[`style-struct.css`](/style-struct.css) file._
 
 ## Scrolling progress indicator
 
@@ -175,7 +182,7 @@ See below for a detailed description of the styles applied on the children entit
 # Markup
 
 _The styling code associated with HTML constructs (native and/or custom) is defined in
-the [`_markup.css`](/_markup.css) file._
+the [`style-markup.css`](/style-markup.css) file._
 
 # CSS imports
 
@@ -190,13 +197,70 @@ equations can be found in the document.
 
 Syntax highlighting is rendered client-side (via
 [`highlight.js`](https://highlightjs.org/)) and requires a specific set of (18!) colours
-to be defined. The [`github-colours.sh`](/github-colours.sh) script fetches and
-aggregates said colours from official themes (search for the `github` keyword in the
+to be defined. The latter can be fetched and aggregates from "official" themes (search
+for the `github` keyword in the
 [`srcstyles/` directory of the `highlight.js` repo](https://github.com/highlightjs/highlight.js/tree/main/srcstyles)).
+
+<details>
+<summary>Fetch GitHub colours</summary>
+
+Below assumption is, all CSS definitions are in the same order in each of the files
+scanned.
+
+```shell
+
+function extract_hex {
+  grep -e 'background:' -e 'color:' $1 | sed 's/;$//g' | awk '{print$NF}'
+}
+
+function format_vars {
+  extract_hex $1 | cat -n | sed 's/^[ ]*/  --color-/g;s/\t/: /g;s/$/;/g'
+}
+
+src=https://raw.githubusercontent.com/highlightjs/highlight.js/main/src/styles
+wget -qq $src/github.css
+wget -qq $src/github-dark.css
+wget -qq $src/github-dark-dimmed.css
+
+echo '/*
+ * source themes downloaded from:
+ * https://github.com/highlightjs/highlight.js/tree/main/src/styles
+ * and merged to account for the theme switch
+ */'
+echo
+
+echo -e ":root,\n.light {"
+format_vars github.css
+echo '}'
+echo
+
+echo '.dark {'
+format_vars github-dark.css
+echo '}'
+echo
+
+echo '.dimmed {'
+format_vars github-dark-dimmed.css
+echo '}'
+echo
+
+awk '/.hljs/,0' github-dark-dimmed.css > .tmp-theme
+
+format_vars github-dark-dimmed.css | while read line; do
+  var=$(awk '{print$1}' <<< $line | sed 's/://g')
+  hex=$(awk '{print$2}' <<< $line | sed 's/;//g')
+  sed -i "s/$hex/var\($var\)/" .tmp-theme
+done
+cat .tmp-theme
+
+rm .tmp-theme github*.css
+```
+
+</details>
 
 _External imports are defined in the [`style.css`](/style.css) file, while colours and
 style mappings associated with syntax highlighting are defined in the
-[`_syntax.css`](/_syntax.css) file._
+[`style-syntax.css`](/style-syntax.css) file._
 
 # `@media` rules
 
@@ -206,4 +270,4 @@ larger displays) and the _preceding/following articles_ links (on top of each ot
 taking the whole width of the screen by default, but side-by-side and with a fixed
 dimension for larger display).
 
-_`@media` rules are defined in the [`_struct.css`](/_struct.css) file._
+_`@media` rules are defined in the [`style-struct.css`](/style-struct.css) file._
