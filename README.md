@@ -3,7 +3,7 @@
 included in and rendered by the code from the
 [`markdown-render`](https://github.com/carnarez/markdown-render) repo. The crude
 light/dimmed/dark themes and syntax highlighting were [quite shamelessly] forked from
-GitHub colour scheme for my own sense of consistency.
+GitHub colour scheme for my own sense of symmetry and consistency.
 
 Structure of this little codebase:
 
@@ -41,12 +41,14 @@ _These variables are defined in the [`style.css`](/style.css) file._
 
 ## Colours
 
-| Variable name | Light theme (*default*) | Dimmed theme | Dark theme |
+| Variable name | Light | Dark | Dimmed |
 |:---|:---|:---|:---|
-| `background-color` | [`#ffffff`](https://www.color-hex.com/color/ffffff) | [`#22272e`](https://www.color-hex.com/color/22272e) | [`#0d1117`](https://www.color-hex.com/color/0d1117) |
-| `background-color-alt` | [`#f3f5f7`](https://www.color-hex.com/color/f3f5f7) | [`#2d333b`](https://www.color-hex.com/color/2d333b) | [`#161b22`](https://www.color-hex.com/color/161b22) |
-| `font-color` | [`#24292e`](https://www.color-hex.com/color/24292e) | [`#adbac7`](https://www.color-hex.com/color/adbac7) | [`#c9d1d9`](https://www.color-hex.com/color/c9d1d9) |
-| `link-color` | [`#0969da`](https://www.color-hex.com/color/0969da) | [`#539bf5`](https://www.color-hex.com/color/539bf5) | [`#539bf5`](https://www.color-hex.com/color/539bf5) | 
+| `background-color` | [`#ffffff`](https://www.color-hex.com/color/ffffff) | [`#0d1117`](https://www.color-hex.com/color/0d1117) | [`#22272e`](https://www.color-hex.com/color/22272e) |
+| `background-color-alt` | [`#f3f5f7`](https://www.color-hex.com/color/f3f5f7) | [`#161b22`](https://www.color-hex.com/color/161b22) | [`#2d333b`](https://www.color-hex.com/color/2d333b) |
+| `font-color` | [`#24292e`](https://www.color-hex.com/color/24292e) | [`#c9d1d9`](https://www.color-hex.com/color/c9d1d9) | [`#adbac7`](https://www.color-hex.com/color/adbac7) |
+| `link-color` | [`#0969da`](https://www.color-hex.com/color/0969da) | [`#539bf5`](https://www.color-hex.com/color/539bf5) | [`#539bf5`](https://www.color-hex.com/color/539bf5) |
+
+The light theme is default.
 
 ## Dimensions
 
@@ -257,11 +259,11 @@ The CSS necessary to render mathematical equations using the
 [`KaTeX`](https://katex.org/) package is added to the mix, regardless of whether
 equations can be found in the document.
 
-Syntax highlighting is rendered client-side (via
+Syntax highlighting is applied client-side (via
 [`highlight.js`](https://highlightjs.org/)) and requires a specific set of (18!) colours
-to be defined. The latter can be fetched and aggregates from "official" themes (search
-for the `github` keyword in the
-[`srcstyles/` directory of the `highlight.js` repo](https://github.com/highlightjs/highlight.js/tree/main/srcstyles)).
+to be defined. The latter can be fetched and aggregates from "official" themes (look for
+them in the
+[`src/styles/` directory of the `highlight.js` repo](https://github.com/highlightjs/highlight.js/tree/main/src/styles)).
 
 <details>
 <summary>Fetch GitHub colours</summary>
