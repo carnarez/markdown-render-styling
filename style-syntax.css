@@ -69,8 +69,8 @@
 }
 
 .hljs {
-  background: var(--color-2);
   color: var(--color-1);
+  background: var(--color-2);
 }
 
 .hljs-doctag,
@@ -132,8 +132,8 @@
 }
 
 .hljs-section {
-  color: var(--color-11);
   font-weight: bold;
+  color: var(--color-11);
 }
 
 .hljs-bullet {
@@ -141,23 +141,23 @@
 }
 
 .hljs-emphasis {
-  color: var(--color-1);
   font-style: italic;
+  color: var(--color-1);
 }
 
 .hljs-strong {
-  color: var(--color-1);
   font-weight: bold;
+  color: var(--color-1);
 }
 
 .hljs-addition {
-  background-color: var(--color-16);
   color: var(--color-15);
+  background-color: var(--color-16);
 }
 
 .hljs-deletion {
-  background-color: var(--color-18);
   color: var(--color-17);
+  background-color: var(--color-18);
 }
 
 .hljs-char.escape_,
