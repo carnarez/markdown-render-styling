@@ -10,35 +10,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout https://github.com/carnarez/markdown-render-styling repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Set up Python v3.10
-        uses: actions/setup-python@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.10'
-
-      - name: Install Python dependencies
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install --no-cache-dir ghp-import
-
-      - name: Set up Node v16.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
+          node-version: '18.x'
 
       - name: Install Node dependencies
         run: |
           npm install --global --no-audit --no-fund \
             autoprefixer \
+            cssnano \
+            postcss-cli \
             stylelint \
-            postcss-cli
+            stylelint-config-recess-order \
+            stylelint-config-standard
 
       - name: Bundle everything together
         run: |
-          stylelint --config stylelint.json
-          postcss style.css --replace --use autoprefixer
-          postcss style.css --replace --use autoprefixer
+          echo '{"extends":["stylelint-config-standard","stylelint-config-recess-order"]}' > stylelint.json
+          stylelint style.css --config stylelint.json
+          postcss style.css --replace --use autoprefixer,cssnano
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --no-cache-dir ghp-import
 
       - name: Push bundle to branch
         run: |
