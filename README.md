@@ -287,6 +287,9 @@ wget -qq $src/github.css
 wget -qq $src/github-dark.css
 wget -qq $src/github-dark-dimmed.css
 
+echo '/* stylelint-disable selector-class-pattern */'
+echo
+
 echo '/*
  * source themes downloaded from:
  * https://github.com/highlightjs/highlight.js/tree/main/src/styles

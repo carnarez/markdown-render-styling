@@ -1,3 +1,5 @@
+/* stylelint-disable no-invalid-position-at-import-rule */
+
 :root {
   --font-size: 16px;  /* 1rem */
   --line-height: 2rem;
