@@ -87,7 +87,8 @@ Note the duration parameter is currently applied on the following
 <details>
 <summary>Full HTML code</summary>
 
-Below the full [pseudo-]code of the `body` tag of the HTML template.
+Below the full [pseudo-]code of the `body` tag of the HTML template. The "design" is
+kept as minimalistic as possible, leaving to CSS most of the work.
 
 ```html
 <body>
