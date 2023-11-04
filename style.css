@@ -1,4 +1,23 @@
-/* stylelint-disable no-invalid-position-at-import-rule */
+/* external imports */
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/regular.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css");
+
+
+
+/* partial style definitions */
+
+@import url("style-markup.css");
+@import url("style-struct.css");
+@import url("style-syntax.css");
+
+
+
+/* parameters */
 
 :root {
   --font-size: 16px;  /* 1rem */
@@ -36,21 +55,3 @@
   --font-color: #adbac7;
   --link-color: #539bf5;
 }
-
-
-
-/* partial style definitions */
-
-@import url("style-markup.css");
-@import url("style-struct.css");
-@import url("style-syntax.css");
-
-
-
-/* external imports */
-
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/regular.min.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css");
