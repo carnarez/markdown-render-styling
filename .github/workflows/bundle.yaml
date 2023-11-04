@@ -22,16 +22,15 @@ jobs:
           npm install --global --no-audit --no-fund \
             autoprefixer \
             cssnano \
-            postcss-cli \
-            stylelint \
-            stylelint-config-recess-order \
-            stylelint-config-standard
+            postcss-cli
 
       - name: Bundle everything together
         run: |
-          echo '{"extends":["stylelint-config-standard","stylelint-config-recess-order"]}' > stylelint.json
-          stylelint style.css --config stylelint.json
-          postcss style.css --replace --use autoprefixer,cssnano
+          cat style.css style-*.css | grep -v '@import url("style-' > style.css_
+          rm *.css
+          mv style.css_ style.css
+          postcss style.css --no-map --replace --use autoprefixer
+          postcss style.css --no-map --replace --use cssnano
 
       - name: Set up Python
         uses: actions/setup-python@v4
