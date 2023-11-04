@@ -144,8 +144,12 @@ span.katex-display:hover::after {
   color: var(--link-color);
 }
 
-.katex {
+span.katex {
   width: 100%;
+}
+
+span.katex-html {
+  visibility: collapse;
 }
 
 
