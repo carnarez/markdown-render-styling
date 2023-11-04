@@ -128,28 +128,24 @@ body {
   counter-reset: eqn;
 }
 
-span.katex-display {
+span.katex {
   display: flex;
   align-items: center;
 }
 
-span.katex-display::after {
+span.katex::after {
   padding: 0 0 0 2rem;
   color: var(--font-color);
   content: "[" counter(eqn) "]";
   counter-increment: eqn;
 }
 
-span.katex-display:hover::after {
+span.katex:hover::after {
   color: var(--link-color);
 }
 
 span.katex {
   width: 100%;
-}
-
-span.katex-html {
-  visibility: collapse;
 }
 
 
