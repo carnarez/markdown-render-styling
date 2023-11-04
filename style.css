@@ -41,9 +41,9 @@
 
 /* partial style definitions */
 
-@import url("_markup.css");
-@import url("_struct.css");
-@import url("_syntax.css");
+@import url("style-markup.css");
+@import url("style-struct.css");
+@import url("style-syntax.css");
 
 
 

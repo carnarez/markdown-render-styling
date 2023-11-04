@@ -102,7 +102,7 @@ summary {
 
 summary::before {
   margin: 0 0.5rem 0 0;
-  font-family: "Font Awesome 6 Free", serif;
+  font-family: "Font Awesome 6 Free";
   font-weight: 900;
   content: "\f054";
 }
@@ -180,7 +180,7 @@ sup {
 
 .footnote-backref::after {
   margin: 0 0 0 1rem;
-  font-family: "Font Awesome 6 Free", serif;
+  font-family: "Font Awesome 6 Free";
   font-weight: 900;
   content: "\f08e";
 }

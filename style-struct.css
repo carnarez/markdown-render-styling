@@ -105,27 +105,27 @@ nav#topbar div a:not(.logo).theme::before {
 }
 
 nav#topbar div a:not(.logo).repo::before {
-  font-family: "Font Awesome 6 Brands", serif;
+  font-family: "Font Awesome 6 Brands";
   content: "\f09b";
 }
 
 nav#topbar div a:not(.logo).reset::before {
-  font-family: "Font Awesome 6 Free", serif;
+  font-family: "Font Awesome 6 Free";
   content: "\f00d";
 }
 
 nav#topbar div a:not(.logo).search::before {
-  font-family: "Font Awesome 6 Free", serif;
+  font-family: "Font Awesome 6 Free";
   content: "\f002";
 }
 
 nav#topbar div a:not(.logo).sidebar::before {
-  font-family: "Font Awesome 6 Free", serif;
+  font-family: "Font Awesome 6 Free";
   content: "\f0ca";
 }
 
 nav#topbar div a:not(.logo).theme::before {
-  font-family: "Font Awesome 6 Free", serif;
+  font-family: "Font Awesome 6 Free";
   content: "\f042";
 }
 
@@ -281,7 +281,7 @@ aside#search #search-output .text {
 }
 
 aside#search #search-output .text::after {
-  font-family: "Font Awesome 6 Free", serif;
+  font-family: "Font Awesome 6 Free";
   font-size: 80%;
   font-weight: 900;
   color: var(--link-color);
@@ -385,7 +385,7 @@ article footer a#next:hover {
 
 article footer a#prev::before,
 article footer a#next::after {
-  font-family: "Font Awesome 6 Free", serif;
+  font-family: "Font Awesome 6 Free";
   font-weight: 900;
   color: var(--link-color);
 }
