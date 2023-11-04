@@ -128,6 +128,10 @@ body {
   counter-reset: eqn;
 }
 
+span.katex .katex-html { 
+  display: none;
+}
+
 span.katex-display {
   display: flex;
   align-items: center;
@@ -146,10 +150,6 @@ span.katex-display:hover::after {
 
 span.katex-display .katex {
   width: 100%;
-}
-
-span.katex-display .katex .katex-html {
-  display: none;
 }
 
 
