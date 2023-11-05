@@ -44,4 +44,4 @@ jobs:
 
       - name: Push bundle to branch
         run: |
-          ghp-import --branch css --force --push style.css
+          ghp-import --branch bundle --force --push style.css
