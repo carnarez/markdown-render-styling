@@ -26,11 +26,10 @@ jobs:
 
       - name: Bundle everything together
         run: |
-          cat style.css style-*.css | grep -v '@import url("style-' > style.css_
-          rm *.css
-          mv style.css_ style.css
-          postcss style.css --no-map --replace --use autoprefixer
-          postcss style.css --no-map --replace --use cssnano
+          mkdir /tmp/bundle
+          cat style.css style-*.css | grep -v '@import url("style-' > /tmp/bundle/style.css
+          postcss /tmp/bundle/style.css --no-map --replace --use autoprefixer
+          postcss /tmp/bundle/style.css --no-map --replace --use cssnano
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -44,4 +43,4 @@ jobs:
 
       - name: Push bundle to branch
         run: |
-          ghp-import --branch bundle --force --push style.css
+          ghp-import --branch bundle --force --push /tmp/bundle
