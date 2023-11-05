@@ -1,0 +1,47 @@
+name: Bundle CSS
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout https://github.com/carnarez/markdown-render-styling repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+
+      - name: Install Node dependencies
+        run: |
+          npm install --global --no-audit --no-fund \
+            autoprefixer \
+            cssnano \
+            postcss-cli
+
+      - name: Bundle everything together
+        run: |
+          cat style.css style-*.css | grep -v '@import url("style-' > style.css_
+          rm *.css
+          mv style.css_ style.css
+          postcss style.css --no-map --replace --use autoprefixer
+          postcss style.css --no-map --replace --use cssnano
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --no-cache-dir ghp-import
+
+      - name: Push bundle to branch
+        run: |
+          ghp-import --branch bundle --force --push style.css

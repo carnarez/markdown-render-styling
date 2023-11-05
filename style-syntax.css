@@ -1,3 +1,5 @@
+/* stylelint-disable selector-class-pattern */
+
 /*
  * source themes downloaded from:
  * https://github.com/highlightjs/highlight.js/tree/main/src/styles
@@ -7,7 +9,7 @@
 :root,
 .light {
   --color-1: #24292e;
-  --color-2: #ffffff;
+  --color-2: #fff;
   --color-3: #d73a49;
   --color-4: #6f42c1;
   --color-5: #005cc5;
@@ -70,7 +72,7 @@
 
 .hljs {
   color: var(--color-1);
-  background: var(--color-2);
+  background: none; /* nope! */
 }
 
 .hljs-doctag,
@@ -80,7 +82,6 @@
 .hljs-template-variable,
 .hljs-type,
 .hljs-variable.language_ {
-  /* prettylights-syntax-keyword */
   color: var(--color-3);
 }
 
@@ -88,7 +89,6 @@
 .hljs-title.class_,
 .hljs-title.class_.inherited__,
 .hljs-title.function_ {
-  /* prettylights-syntax-entity */
   color: var(--color-4);
 }
 
@@ -102,27 +102,23 @@
 .hljs-selector-attr,
 .hljs-selector-class,
 .hljs-selector-id {
-  /* prettylights-syntax-constant */
   color: var(--color-5);
 }
 
 .hljs-regexp,
 .hljs-string,
 .hljs-meta .hljs-string {
-  /* prettylights-syntax-string */
   color: var(--color-6);
 }
 
 .hljs-built_in,
 .hljs-symbol {
-  /* prettylights-syntax-variable */
   color: var(--color-7);
 }
 
 .hljs-comment,
 .hljs-code,
 .hljs-formula {
-  /* prettylights-syntax-comment */
   color: var(--color-8);
 }
 
@@ -130,46 +126,38 @@
 .hljs-quote,
 .hljs-selector-tag,
 .hljs-selector-pseudo {
-  /* prettylights-syntax-entity-tag */
   color: var(--color-9);
 }
 
 .hljs-subst {
-  /* prettylights-syntax-storage-modifier-import */
   color: var(--color-1);
 }
 
 .hljs-section {
-  /* prettylights-syntax-markup-heading */
-  color: var(--color-11);
   font-weight: bold;
+  color: var(--color-11);
 }
 
 .hljs-bullet {
-  /* prettylights-syntax-markup-list */
   color: var(--color-12);
 }
 
 .hljs-emphasis {
-  /* prettylights-syntax-markup-italic */
-  color: var(--color-1);
   font-style: italic;
+  color: var(--color-1);
 }
 
 .hljs-strong {
-  /* prettylights-syntax-markup-bold */
-  color: var(--color-1);
   font-weight: bold;
+  color: var(--color-1);
 }
 
 .hljs-addition {
-  /* prettylights-syntax-markup-inserted */
   color: var(--color-15);
   background-color: var(--color-16);
 }
 
 .hljs-deletion {
-  /* prettylights-syntax-markup-deleted */
   color: var(--color-17);
   background-color: var(--color-18);
 }
