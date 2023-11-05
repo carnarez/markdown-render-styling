@@ -73,26 +73,26 @@ details {
   border-radius: 5px;
 }
 
-details[open] > summary::before {
-  content: "\f078";
-}
-
-summary {
+details summary {
   font-weight: bold;
   list-style-type: "";
   cursor: pointer;
 }
 
-summary::before {
+details summary::before {
   margin: 0 0.5rem 0 0;
   font-family: "Font Awesome 6 Free", serif;
   font-weight: 900;
   content: "\f054";
 }
 
-summary:hover::before,
+details summary:hover::before,
 details[open] > summary::before {
   color: var(--link-color);
+}
+
+details[open] summary::before {
+  content: "\f078";
 }
 
 
@@ -153,7 +153,7 @@ sup {
   border-width: 1px 0 0;
 }
 
-.footnote li:first-child {
+.footnote ul li:first-child {
   margin: 1.5rem 0 0;
 }
 
