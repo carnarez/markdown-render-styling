@@ -95,7 +95,6 @@ nav#topbar div a:not(.logo)::before {
 }
 
 nav#topbar div a:not(.logo).repo::before,
-nav#topbar div a:not(.logo).reset::before,
 nav#topbar div a:not(.logo).search::before,
 nav#topbar div a:not(.logo).sidebar::before,
 nav#topbar div a:not(.logo).theme::before {
@@ -107,11 +106,6 @@ nav#topbar div a:not(.logo).theme::before {
 nav#topbar div a:not(.logo).repo::before {
   font-family: "Font Awesome 6 Brands", serif;
   content: "\f09b";
-}
-
-nav#topbar div a:not(.logo).reset::before {
-  font-family: "Font Awesome 6 Free", serif;
-  content: "\f00d";
 }
 
 nav#topbar div a:not(.logo).search::before {
@@ -144,7 +138,7 @@ nav#topbar div a.logo img {
 
 /* splash screen */
 
-header {
+header#splash {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -155,14 +149,14 @@ header {
   background: linear-gradient(0deg, var(--background-color) 0%, var(--background-color-alt) 100%);
 }
 
-header span {
+header#splash span {
   display: block;
   padding: 0 1rem;
   margin: 1rem 0;
   text-align: center;
 }
 
-header span.title {
+header#splash span.title {
   margin: 2rem 0 1rem;
   font-size: 250%;
 }
@@ -213,15 +207,41 @@ aside > * {
   margin: 0;
 }
 
-aside a.active {
-  font-weight: bold;
-  color: var(--link-color);
-}
-
 aside#search header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+aside#search header a {
+  padding: 1rem;
+  color: var(--font-color);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  border: 0;
+  border-radius: calc(var(--icon-size) + 1rem);
+}
+
+aside#search header a:hover {
+  background-color: var(--background-color-alt);
+}
+
+aside#search header a.reset::before,
+aside#search header a.search::before {
+  display: inline-block;
+  width: var(--line-height);
+  font-family: "Font Awesome 6 Free", serif;
+  font-size: var(--icon-size);
+  font-weight: 900;
+  text-align: center;
+}
+
+aside#search header a.reset::before {
+  content: "\f00d";
+}
+
+aside#search header a.search::before {
+  content: "\f002";
 }
 
 aside#search header span:hover {
@@ -272,6 +292,7 @@ aside#search #search-output li:hover {
 
 aside#search #search-output li a {
   width: 100%;
+  text-decoration-line: none;
   border: 0;
 }
 
@@ -307,6 +328,11 @@ aside#toc a {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+aside#toc a.active {
+  font-weight: bold;
+  color: var(--link-color);
 }
 
 @media screen and (width < 1000px) {
@@ -380,6 +406,7 @@ article footer a#next:not(:empty) {
 
 article footer a#prev:hover,
 article footer a#next:hover {
+  text-decoration-line: none;
   border-color: var(--link-color);
 }
 
