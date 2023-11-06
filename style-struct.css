@@ -381,12 +381,6 @@ article footer a#next {
   text-align: right;
 }
 
-article footer a#prev:hover,
-article footer a#next:hover {
-  text-decoration-line: none;
-  border-color: var(--link-color);
-}
-
 article footer a#prev::before,
 article footer a#next::after {
   font-family: "Font Awesome 6 Free", serif;
@@ -403,6 +397,12 @@ article footer a#next:not(:empty) {
   border-style: solid;
   border-width: 1px;
   border-radius: 5px;
+}
+
+article footer a#prev:not(:empty):hover,
+article footer a#next:not(:empty):hover {
+  text-decoration-line: none;
+  border-color: var(--link-color);
 }
 
 article footer a#prev:not(:empty)::before {
