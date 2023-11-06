@@ -26,7 +26,7 @@
   --side-nav-width: 40%;
   --top-nav-height: 5rem;
   --font-family: "Arial", sans-serif;
-  --font-family-monospace: "Courier New", monospace;
+  --font-family-monospace: "Consolas", "Courier New", monospace;
   --transition-duration: 0.5s;
 }
 
