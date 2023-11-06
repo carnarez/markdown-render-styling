@@ -73,8 +73,11 @@ details {
   border-radius: 5px;
 }
 
+details:hover {
+  border-color: var(--font-color);
+}
+
 details summary {
-  font-weight: bold;
   list-style-type: "";
   cursor: pointer;
 }
