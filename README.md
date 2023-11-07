@@ -66,7 +66,7 @@ The light theme is default.
 | Variable name | Value |
 |:---|:---|
 | `font-family` | [`Arial`](https://en.wikipedia.org/wiki/Arial), `sans-serif` |
-| `font-family-monospace` | [`Courier New`](https://en.wikipedia.org/wiki/Courier_(typeface)), `monospace` |
+| `font-family-monospace` | [`Consolas`](https://en.wikipedia.org/wiki/Consolas), `monospace` |
 
 The default font families are chosen from the list of
 [web safe fonts](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#web_safe_fonts).
